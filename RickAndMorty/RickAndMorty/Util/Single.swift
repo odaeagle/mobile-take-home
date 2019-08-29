@@ -14,7 +14,6 @@ class Single<T> {
 
     func subscribe(_ completion: @escaping (T?, Error?) -> Void) {
         DispatchQueue.global().async {
-            print(Thread.current)
             do {
                 let result = try self.work()
                 DispatchQueue.main.async {
