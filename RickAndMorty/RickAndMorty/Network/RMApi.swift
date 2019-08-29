@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class RMApi {
     static let shared = RMApi()
@@ -17,6 +17,18 @@ class RMApi {
         })
     }
 
+    func downloadImage(url: String) -> Single<UIImage> {
+        return Single<URLRequest>(work: { () -> URLRequest in
+            var request = URLRequest(url: URL(string: url)!)
+            request.httpMethod = "GET"
+            return request
+        }).map({ (request) -> Data in
+            return try self.executeRequest(request: request)
+        }).map({ (data) -> UIImage in
+            return UIImage(data: data)!
+        })
+    }
+
     private func createRequest() -> URLRequest {
         var request = URLRequest(url: URL(string: "https://rickandmortyapi.com/graphql")!)
         request.httpMethod = "POST"
@@ -28,12 +40,12 @@ class RMApi {
         let session = URLSession.shared
         var dataReceived: Data?
         var receivedError: Error?
-        print(Thread.current)
         let sem = DispatchSemaphore.init(value: 0)
 
         let task = session.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 receivedError = error
+                print("XXX", receivedError)
             } else {
                 dataReceived = data
             }
@@ -41,9 +53,6 @@ class RMApi {
         }
 
         task.resume()
-
-        // This line will wait until the semaphore has been signaled
-        // which will be once the data task has completed
         sem.wait()
 
         if dataReceived != nil {

@@ -36,7 +36,10 @@ class EpisodeListCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel.frame = contentView.bounds
+        titleLabel.frame = CGRect(x: 8,
+                                  y: 0,
+                                  width: contentView.bounds.width - 16,
+                                  height: contentView.bounds.height)
     }
 
     func bind(_ model: EpisodeListCellUIModel) {

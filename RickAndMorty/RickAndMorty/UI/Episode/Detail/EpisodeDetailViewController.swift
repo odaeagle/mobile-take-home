@@ -5,19 +5,36 @@ struct EpisodeDetailPreloadModel {
     let name: String
 }
 
+private let headerHeight = CGFloat(50)
+
 class EpisodeDetailViewController: UIViewController {
 
-    var preloadModel: EpisodeDetailPreloadModel!
+    private var preloadModel: EpisodeDetailPreloadModel!
+    private var episode: Episode?
+    private var models = [CharacterDetailCellUIModel]()
+    private var filteredModels = [CharacterDetailCellUIModel]()
 
-    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+    private var filterControl = UISegmentedControl().apply {
+        $0.insertSegment(withTitle: "All", at: 0, animated: false)
+        $0.insertSegment(withTitle: "Alive", at: 1, animated: false)
+        $0.insertSegment(withTitle: "Dead", at: 2, animated: false)
+        $0.insertSegment(withTitle: "unknown", at: 3, animated: false)
+    }
+
+    private var divider = UIView().apply {
+        $0.backgroundColor = UIColor(white: 0, alpha: 0.5)
+    }
+
+    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         return UICollectionViewFlowLayout().apply {
             $0.minimumInteritemSpacing = 0
             $0.minimumLineSpacing = 0
         }
     }()
 
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         return UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout).apply {
+            $0.backgroundColor = .white
             $0.register(CharacterDetailCell.self,
                         forCellWithReuseIdentifier: CharacterDetailCell.identifier)
             $0.dataSource = self
@@ -32,9 +49,52 @@ class EpisodeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-
+        view.backgroundColor = .white
+        view.addSubview(filterControl)
+        view.addSubview(divider)
         view.addSubview(collectionView)
+
+        filterControl.addTarget(self, action: #selector(onFilterControlChanged(sender:)), for: .valueChanged)
+
+        fetchCharacters()
+    }
+
+    private func fetchCharacters() {
+        filterControl.isEnabled = false
+        EpisodeService.shared.fetchEpisodeDetail(id: preloadModel.id)
+            .map { [weak self] (episode) -> [CharacterDetailCellUIModel] in
+                self?.episode = episode
+                return (episode.characters ?? []).map { CharacterDetailCellUIModel(character: $0) }
+            }.subscribe { [weak self] (models, error) in
+                if let self = self {
+                    if error != nil {
+                        /* ERROR */
+                    } else {
+                        self.models.append(contentsOf: models ?? [])
+                        self.collectionView.reloadData()
+                        self.filterControl.isEnabled = true
+                        self.filterControl.selectedSegmentIndex = 0
+                        self.onFilterControlChanged(sender: self.filterControl)
+                    }
+                }
+        }
+    }
+
+    @objc private func onFilterControlChanged(sender: UISegmentedControl) {
+        filteredModels.removeAll()
+        switch sender.selectedSegmentIndex {
+        case 0:
+            filteredModels.append(contentsOf: models)
+        case 1:
+            filteredModels.append(contentsOf: models.filter { $0.status == .alive })
+        case 2:
+            filteredModels.append(contentsOf: models.filter { $0.status == .dead })
+        case 3:
+            filteredModels.append(contentsOf: models.filter { $0.status == .unknown })
+        default:
+            break
+        }
+        collectionView.reloadData()
     }
 
     override func viewWillLayoutSubviews() {
@@ -42,22 +102,33 @@ class EpisodeDetailViewController: UIViewController {
         let width = view.bounds.width
         let height = view.bounds.height
         collectionViewLayout.itemSize = CGSize(width: width / 2 , height: width / 2)
+
+        filterControl.sizeToFit()
+        filterControl.center = CGPoint(x: width / 2 , y: view.safeAreaInsets.top + headerHeight / 2)
+        divider.frame = CGRect(x: 0,
+                               y: view.safeAreaInsets.top + headerHeight,
+                               width: width,
+                               height: 1)
         collectionView.frame = CGRect(x: 0,
-                                      y: view.safeAreaInsets.top + 100,
+                                      y: view.safeAreaInsets.top + headerHeight + 1,
                                       width: width,
-                                      height: height - view.safeAreaInsets.top - 100)
+                                      height: height - view.safeAreaInsets.top - headerHeight - 1)
     }
 }
 
 extension EpisodeDetailViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return filteredModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let model = filteredModels[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterDetailCell.identifier,
                                                       for: indexPath)
+        if let cell = cell as? CharacterDetailCell {
+            cell.bind(model)
+        }
         return cell
     }
 }
