@@ -15,6 +15,7 @@ class EpisodeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Rickipedia"
         view.backgroundColor = .white
         view.addSubview(tableView)
 

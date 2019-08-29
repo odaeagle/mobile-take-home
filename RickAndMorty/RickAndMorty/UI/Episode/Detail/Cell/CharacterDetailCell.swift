@@ -13,7 +13,8 @@ extension CharacterDetailCellUIModel {
     init(character: Character) {
         title = character.name
         preloadModel = CharacterDetailPreloadModel(id: character.id,
-                                                   name: character.name)
+                                                   name: character.name,
+                                                   imageUrl: character.image)
         url = character.image
         status = character.status
         switch character.status {

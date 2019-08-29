@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E3EE6D872317316600A0F501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6D862317316600A0F501 /* AppDelegate.swift */; };
-		E3EE6D892317316600A0F501 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6D882317316600A0F501 /* MainViewController.swift */; };
 		E3EE6D8E2317316700A0F501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EE6D8D2317316700A0F501 /* Assets.xcassets */; };
 		E3EE6D912317316700A0F501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EE6D8F2317316700A0F501 /* LaunchScreen.storyboard */; };
 		E3EE6D9C2317321400A0F501 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6D9B2317321400A0F501 /* Single.swift */; };
@@ -16,7 +15,6 @@
 		E3EE6DA1231732BC00A0F501 /* KotlinStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DA0231732BC00A0F501 /* KotlinStyle.swift */; };
 		E3EE6DA9231733DD00A0F501 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DA8231733DD00A0F501 /* Episode.swift */; };
 		E3EE6DAB2317340700A0F501 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAA2317340700A0F501 /* Character.swift */; };
-		E3EE6DAE231734F600A0F501 /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAD231734F600A0F501 /* RMService.swift */; };
 		E3EE6DB02317391600A0F501 /* RMResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAF2317391600A0F501 /* RMResponse.swift */; };
 		E3EE6DB32317660A00A0F501 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB22317660A00A0F501 /* Query.swift */; };
 		E3EE6DB52317684400A0F501 /* EpisodeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB42317684400A0F501 /* EpisodeQuery.swift */; };
@@ -33,7 +31,6 @@
 /* Begin PBXFileReference section */
 		E3EE6D832317316600A0F501 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3EE6D862317316600A0F501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3EE6D882317316600A0F501 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E3EE6D8D2317316700A0F501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3EE6D902317316700A0F501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3EE6D922317316700A0F501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +39,6 @@
 		E3EE6DA0231732BC00A0F501 /* KotlinStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinStyle.swift; sourceTree = "<group>"; };
 		E3EE6DA8231733DD00A0F501 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		E3EE6DAA2317340700A0F501 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		E3EE6DAD231734F600A0F501 /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
 		E3EE6DAF2317391600A0F501 /* RMResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMResponse.swift; sourceTree = "<group>"; };
 		E3EE6DB22317660A00A0F501 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		E3EE6DB42317684400A0F501 /* EpisodeQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeQuery.swift; sourceTree = "<group>"; };
@@ -103,8 +99,6 @@
 			children = (
 				E3EE6DBF23176C0500A0F501 /* Character */,
 				E3EE6DBC23176BF800A0F501 /* Episode */,
-				E3EE6DA22317332000A0F501 /* Common */,
-				E3EE6D882317316600A0F501 /* MainViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -137,13 +131,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		E3EE6DA22317332000A0F501 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		E3EE6DA7231733B500A0F501 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +143,6 @@
 		E3EE6DAC231734E800A0F501 /* Serivce */ = {
 			isa = PBXGroup;
 			children = (
-				E3EE6DAD231734F600A0F501 /* RMService.swift */,
 				E3EE6DB8231768C300A0F501 /* EpisodeService.swift */,
 				E3EE6DBA231768CB00A0F501 /* CharacterService.swift */,
 			);
@@ -306,11 +292,9 @@
 				E3EE6DB32317660A00A0F501 /* Query.swift in Sources */,
 				E3EE6DB72317684C00A0F501 /* CharacterQuery.swift in Sources */,
 				E3EE6DA9231733DD00A0F501 /* Episode.swift in Sources */,
-				E3EE6DAE231734F600A0F501 /* RMService.swift in Sources */,
 				E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */,
 				E3EE6DAB2317340700A0F501 /* Character.swift in Sources */,
 				E3EE6D9C2317321400A0F501 /* Single.swift in Sources */,
-				E3EE6D892317316600A0F501 /* MainViewController.swift in Sources */,
 				E3EE6D872317316600A0F501 /* AppDelegate.swift in Sources */,
 				E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */,
 				E3EE6DC923176C6400A0F501 /* EpisodeListCell.swift in Sources */,

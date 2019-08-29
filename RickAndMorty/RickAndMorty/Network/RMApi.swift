@@ -1,6 +1,7 @@
 import UIKit
 
 class RMApi {
+
     static let shared = RMApi()
 
     func executeGraphQL<T: Codable>(query: String, variables: [String: Any]?) -> Single<T> {
@@ -37,6 +38,8 @@ class RMApi {
     }
 
     private func executeRequest(request: URLRequest) throws -> Data {
+        /* been a while i use low level request functions lol */
+        
         let session = URLSession.shared
         var dataReceived: Data?
         var receivedError: Error?
@@ -45,7 +48,6 @@ class RMApi {
         let task = session.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 receivedError = error
-                print("XXX", receivedError)
             } else {
                 dataReceived = data
             }

@@ -55,8 +55,12 @@ class EpisodeDetailViewController: UIViewController {
         view.addSubview(collectionView)
 
         filterControl.addTarget(self, action: #selector(onFilterControlChanged(sender:)), for: .valueChanged)
-
+        bindPreloadModel()
         fetchCharacters()
+    }
+
+    private func bindPreloadModel() {
+        title = preloadModel.name
     }
 
     private func fetchCharacters() {
@@ -136,6 +140,8 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
 extension EpisodeDetailViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let model = filteredModels[indexPath.row]
+        let controller = CharacterDetailViewController(preloadModel: model.preloadModel)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
