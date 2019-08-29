@@ -4,6 +4,7 @@ class RMApi {
 
     static let shared = RMApi()
 
+    /* Everything will be done in background thread : ) */
     func executeGraphQL<T: Codable>(query: String, variables: [String: Any]?) -> Single<T> {
         return Single<URLRequest>(work: { () -> URLRequest in
             var request = self.createRequest()
@@ -18,6 +19,8 @@ class RMApi {
         })
     }
 
+    /* I mean, no third-party allowed, you don't expect me to write a image handling lib from scratch right? well, i mean i did
+       but this will do */
     func downloadImage(url: String) -> Single<UIImage> {
         return Single<URLRequest>(work: { () -> URLRequest in
             var request = URLRequest(url: URL(string: url)!)

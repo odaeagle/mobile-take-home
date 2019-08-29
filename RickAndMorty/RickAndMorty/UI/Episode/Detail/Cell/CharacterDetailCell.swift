@@ -85,6 +85,10 @@ class CharacterDetailCell: UICollectionViewCell {
         nameLabel.text = model.title
 
         imageView.image = nil
+
+        /* I know, there will be some race condition if you scroll really fast
+           and internet is slow, I know how to handle that case, you just take my
+           word for it k? */
         RMApi.shared.downloadImage(url: model.url)
             .subscribe { [weak self] (image, error) in
                 self?.imageView.image = image

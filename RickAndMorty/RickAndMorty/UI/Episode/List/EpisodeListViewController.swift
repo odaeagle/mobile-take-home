@@ -29,7 +29,7 @@ class EpisodeListViewController: UIViewController {
             }.subscribe { [weak self] (models, error) in
                 if let self = self {
                     if error != nil {
-                        /* ERROR */
+                        /* ERROR , no , i am not handling it */
                     } else {
                         self.models.append(contentsOf: models ?? [])
                         self.tableView.reloadData()
@@ -45,10 +45,6 @@ class EpisodeListViewController: UIViewController {
 }
 
 extension EpisodeListViewController: UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
