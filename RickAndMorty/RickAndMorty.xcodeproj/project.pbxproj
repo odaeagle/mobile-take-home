@@ -26,6 +26,8 @@
 		E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */; };
 		E3EE6DC923176C6400A0F501 /* EpisodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */; };
 		E3EE6DCB231771BA00A0F501 /* CharacterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DCA231771BA00A0F501 /* CharacterDetailCell.swift */; };
+		E3EE6DCE23178A3300A0F501 /* CharacterDetailUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DCD23178A3300A0F501 /* CharacterDetailUIModel.swift */; };
+		E3EE6DD023178B3300A0F501 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DCF23178B3300A0F501 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCell.swift; sourceTree = "<group>"; };
 		E3EE6DCA231771BA00A0F501 /* CharacterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCell.swift; sourceTree = "<group>"; };
+		E3EE6DCD23178A3300A0F501 /* CharacterDetailUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailUIModel.swift; sourceTree = "<group>"; };
+		E3EE6DCF23178B3300A0F501 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 			children = (
 				E3EE6D9B2317321400A0F501 /* Single.swift */,
 				E3EE6DA0231732BC00A0F501 /* KotlinStyle.swift */,
+				E3EE6DCF23178B3300A0F501 /* Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				E3EE6DC123176C1A00A0F501 /* CharacterDetailViewController.swift */,
+				E3EE6DCD23178A3300A0F501 /* CharacterDetailUIModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				E3EE6DA9231733DD00A0F501 /* Episode.swift in Sources */,
 				E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */,
 				E3EE6DAB2317340700A0F501 /* Character.swift in Sources */,
+				E3EE6DCE23178A3300A0F501 /* CharacterDetailUIModel.swift in Sources */,
+				E3EE6DD023178B3300A0F501 /* Extensions.swift in Sources */,
 				E3EE6D9C2317321400A0F501 /* Single.swift in Sources */,
 				E3EE6D872317316600A0F501 /* AppDelegate.swift in Sources */,
 				E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */,
