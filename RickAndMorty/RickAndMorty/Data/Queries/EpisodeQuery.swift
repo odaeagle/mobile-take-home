@@ -3,7 +3,7 @@ import Foundation
 extension Query {
     
     static let episodeList =
-        """
+    """
     {
         episodes {
             info {
