@@ -27,6 +27,7 @@
 		E3EE6DC423176C2800A0F501 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC323176C2800A0F501 /* EpisodeListViewController.swift */; };
 		E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */; };
 		E3EE6DC923176C6400A0F501 /* EpisodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */; };
+		E3EE6DCB231771BA00A0F501 /* CharacterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DCA231771BA00A0F501 /* CharacterDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		E3EE6DC323176C2800A0F501 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCell.swift; sourceTree = "<group>"; };
+		E3EE6DCA231771BA00A0F501 /* CharacterDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		E3EE6DBE23176C0100A0F501 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E3EE6DCC231771C000A0F501 /* Cell */,
 				E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */,
 			);
 			path = Detail;
@@ -217,6 +220,14 @@
 			isa = PBXGroup;
 			children = (
 				E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E3EE6DCC231771C000A0F501 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DCA231771BA00A0F501 /* CharacterDetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -306,6 +317,7 @@
 				E3EE6DC223176C1A00A0F501 /* CharacterDetailViewController.swift in Sources */,
 				E3EE6DB52317684400A0F501 /* EpisodeQuery.swift in Sources */,
 				E3EE6DB02317391600A0F501 /* RMResponse.swift in Sources */,
+				E3EE6DCB231771BA00A0F501 /* CharacterDetailCell.swift in Sources */,
 				E3EE6D9F2317328300A0F501 /* RMApi.swift in Sources */,
 				E3EE6DC423176C2800A0F501 /* EpisodeListViewController.swift in Sources */,
 				E3EE6DB9231768C300A0F501 /* EpisodeService.swift in Sources */,

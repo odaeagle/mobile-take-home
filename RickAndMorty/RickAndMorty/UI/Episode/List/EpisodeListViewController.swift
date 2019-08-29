@@ -66,6 +66,8 @@ extension EpisodeListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let model = models[indexPath.row]
+        let controller = EpisodeDetailViewController(preloadModel: model.preloadModel)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
