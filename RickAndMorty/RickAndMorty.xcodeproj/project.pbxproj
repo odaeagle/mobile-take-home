@@ -18,6 +18,11 @@
 		E3EE6DAB2317340700A0F501 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAA2317340700A0F501 /* Character.swift */; };
 		E3EE6DAE231734F600A0F501 /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAD231734F600A0F501 /* RMService.swift */; };
 		E3EE6DB02317391600A0F501 /* RMResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DAF2317391600A0F501 /* RMResponse.swift */; };
+		E3EE6DB32317660A00A0F501 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB22317660A00A0F501 /* Query.swift */; };
+		E3EE6DB52317684400A0F501 /* EpisodeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB42317684400A0F501 /* EpisodeQuery.swift */; };
+		E3EE6DB72317684C00A0F501 /* CharacterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */; };
+		E3EE6DB9231768C300A0F501 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB8231768C300A0F501 /* EpisodeService.swift */; };
+		E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DBA231768CB00A0F501 /* CharacterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		E3EE6DAA2317340700A0F501 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E3EE6DAD231734F600A0F501 /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
 		E3EE6DAF2317391600A0F501 /* RMResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMResponse.swift; sourceTree = "<group>"; };
+		E3EE6DB22317660A00A0F501 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		E3EE6DB42317684400A0F501 /* EpisodeQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeQuery.swift; sourceTree = "<group>"; };
+		E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterQuery.swift; sourceTree = "<group>"; };
+		E3EE6DB8231768C300A0F501 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
+		E3EE6DBA231768CB00A0F501 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 		E3EE6D99231731EA00A0F501 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E3EE6DB1231765FD00A0F501 /* Queries */,
 				E3EE6DAC231734E800A0F501 /* Serivce */,
 				E3EE6DA7231733B500A0F501 /* Models */,
 			);
@@ -134,8 +145,20 @@
 			isa = PBXGroup;
 			children = (
 				E3EE6DAD231734F600A0F501 /* RMService.swift */,
+				E3EE6DB8231768C300A0F501 /* EpisodeService.swift */,
+				E3EE6DBA231768CB00A0F501 /* CharacterService.swift */,
 			);
 			path = Serivce;
+			sourceTree = "<group>";
+		};
+		E3EE6DB1231765FD00A0F501 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DB22317660A00A0F501 /* Query.swift */,
+				E3EE6DB42317684400A0F501 /* EpisodeQuery.swift */,
+				E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */,
+			);
+			path = Queries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,14 +232,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3EE6DA1231732BC00A0F501 /* KotlinStyle.swift in Sources */,
+				E3EE6DB32317660A00A0F501 /* Query.swift in Sources */,
+				E3EE6DB72317684C00A0F501 /* CharacterQuery.swift in Sources */,
 				E3EE6DA9231733DD00A0F501 /* Episode.swift in Sources */,
 				E3EE6DAE231734F600A0F501 /* RMService.swift in Sources */,
 				E3EE6DAB2317340700A0F501 /* Character.swift in Sources */,
 				E3EE6D9C2317321400A0F501 /* Single.swift in Sources */,
 				E3EE6D892317316600A0F501 /* MainViewController.swift in Sources */,
 				E3EE6D872317316600A0F501 /* AppDelegate.swift in Sources */,
+				E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */,
+				E3EE6DB52317684400A0F501 /* EpisodeQuery.swift in Sources */,
 				E3EE6DB02317391600A0F501 /* RMResponse.swift in Sources */,
 				E3EE6D9F2317328300A0F501 /* RMApi.swift in Sources */,
+				E3EE6DB9231768C300A0F501 /* EpisodeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

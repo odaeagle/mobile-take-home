@@ -3,10 +3,10 @@ import Foundation
 class RMApi {
     static let shared = RMApi()
 
-    func executeGraphQL<T: Codable>(query: String, parameters: [String: Any]?) -> Single<T> {
+    func executeGraphQL<T: Codable>(query: String, variables: [String: Any]?) -> Single<T> {
         return Single<URLRequest>(work: { () -> URLRequest in
             var request = self.createRequest()
-            let body = ["query": query, "parameters": parameters ?? [:]] as [String : Any]
+            let body = ["query": query, "variables": variables ?? [:]] as [String : Any]
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
             return request
         }).map({ (request) -> Data in
@@ -36,9 +36,7 @@ class RMApi {
                 receivedError = error
             } else {
                 dataReceived = data
-                print(String(data: dataReceived!, encoding: .utf8))
             }
-            print("XXX", response)
             sem.signal()
         }
 
