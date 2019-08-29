@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  RickAndMorty
-//
-//  Created by Eagle Diao on 2019-08-28.
-//  Copyright © 2019 ED. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -18,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         window = UIWindow()
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = UINavigationController(rootViewController: EpisodeListViewController())
         window?.makeKeyAndVisible()
         return true
     }

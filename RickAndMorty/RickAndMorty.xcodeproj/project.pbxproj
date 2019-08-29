@@ -23,6 +23,10 @@
 		E3EE6DB72317684C00A0F501 /* CharacterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */; };
 		E3EE6DB9231768C300A0F501 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DB8231768C300A0F501 /* EpisodeService.swift */; };
 		E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DBA231768CB00A0F501 /* CharacterService.swift */; };
+		E3EE6DC223176C1A00A0F501 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC123176C1A00A0F501 /* CharacterDetailViewController.swift */; };
+		E3EE6DC423176C2800A0F501 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC323176C2800A0F501 /* EpisodeListViewController.swift */; };
+		E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */; };
+		E3EE6DC923176C6400A0F501 /* EpisodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterQuery.swift; sourceTree = "<group>"; };
 		E3EE6DB8231768C300A0F501 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
 		E3EE6DBA231768CB00A0F501 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		E3EE6DC123176C1A00A0F501 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		E3EE6DC323176C2800A0F501 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 		E3EE6D98231731E500A0F501 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E3EE6DBF23176C0500A0F501 /* Character */,
+				E3EE6DBC23176BF800A0F501 /* Episode */,
 				E3EE6DA22317332000A0F501 /* Common */,
 				E3EE6D882317316600A0F501 /* MainViewController.swift */,
 			);
@@ -159,6 +169,56 @@
 				E3EE6DB62317684C00A0F501 /* CharacterQuery.swift */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		E3EE6DBC23176BF800A0F501 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DBE23176C0100A0F501 /* Detail */,
+				E3EE6DBD23176BFD00A0F501 /* List */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		E3EE6DBD23176BFD00A0F501 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DC723176C5A00A0F501 /* Cell */,
+				E3EE6DC323176C2800A0F501 /* EpisodeListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E3EE6DBE23176C0100A0F501 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DC523176C3300A0F501 /* EpisodeDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E3EE6DBF23176C0500A0F501 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DC023176C0B00A0F501 /* Detail */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		E3EE6DC023176C0B00A0F501 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DC123176C1A00A0F501 /* CharacterDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E3EE6DC723176C5A00A0F501 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E3EE6DC823176C6400A0F501 /* EpisodeListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,14 +296,18 @@
 				E3EE6DB72317684C00A0F501 /* CharacterQuery.swift in Sources */,
 				E3EE6DA9231733DD00A0F501 /* Episode.swift in Sources */,
 				E3EE6DAE231734F600A0F501 /* RMService.swift in Sources */,
+				E3EE6DC623176C3300A0F501 /* EpisodeDetailViewController.swift in Sources */,
 				E3EE6DAB2317340700A0F501 /* Character.swift in Sources */,
 				E3EE6D9C2317321400A0F501 /* Single.swift in Sources */,
 				E3EE6D892317316600A0F501 /* MainViewController.swift in Sources */,
 				E3EE6D872317316600A0F501 /* AppDelegate.swift in Sources */,
 				E3EE6DBB231768CB00A0F501 /* CharacterService.swift in Sources */,
+				E3EE6DC923176C6400A0F501 /* EpisodeListCell.swift in Sources */,
+				E3EE6DC223176C1A00A0F501 /* CharacterDetailViewController.swift in Sources */,
 				E3EE6DB52317684400A0F501 /* EpisodeQuery.swift in Sources */,
 				E3EE6DB02317391600A0F501 /* RMResponse.swift in Sources */,
 				E3EE6D9F2317328300A0F501 /* RMApi.swift in Sources */,
+				E3EE6DC423176C2800A0F501 /* EpisodeListViewController.swift in Sources */,
 				E3EE6DB9231768C300A0F501 /* EpisodeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
