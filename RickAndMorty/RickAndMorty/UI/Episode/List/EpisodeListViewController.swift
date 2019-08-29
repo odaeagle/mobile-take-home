@@ -21,6 +21,10 @@ class EpisodeListViewController: UIViewController {
 
         EpisodeService.shared.fetchEpisodeList()
             .map { (results) -> [EpisodeListCellUIModel] in
+                /* the beauty of this chained thing is that the convertion to ui model can be
+                   also done in the background, think about if you have very complicated logic to
+                   filter/map/reduce, this will greatly improve UI smoothness */
+                
                 return results.map { EpisodeListCellUIModel(episode: $0) }
             }.subscribe { [weak self] (models, error) in
                 if let self = self {
@@ -63,12 +67,13 @@ extension EpisodeListViewController: UITableViewDataSource {
 extension EpisodeListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 90
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = models[indexPath.row]
         let controller = EpisodeDetailViewController(preloadModel: model.preloadModel)
         navigationController?.pushViewController(controller, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
